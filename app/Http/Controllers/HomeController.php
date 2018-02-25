@@ -18,10 +18,11 @@ class HomeController extends Controller
 
     public function post(Request $request)
     {
+        $control = new Control();
+        $data['dados'] = $control->selectAll(5);
+
         $data = $request->all();
         Control::create($data);
-
-        $data['dados'] = $control->selectAll(5);
 
         $tweets = Twitter::getSearch([
             'q' => $data['name'],
