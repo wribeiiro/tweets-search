@@ -19,9 +19,11 @@
                     </form>
                     <hr>
                     <ul class="list-unstyled mb-0">
+                        @if (isset($data['dados']))
                         @foreach($data['dados'] as $dados)
                         <li>{{ $dados['name'] }}</li>
                         @endforeach
+                        @endif
                     </ul>
                 </div>
             </div>
